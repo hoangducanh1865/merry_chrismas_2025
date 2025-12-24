@@ -2,13 +2,13 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 import styles from './ChristmasCard.module.css';
 
 const playlist = [
-  { name: 'Jingle Bells (Piano)', file: 'Jingle Bells (Piano).mp3' },
-  { name: 'Jingle Bell Rock', file: 'Jingle Bell Rock.mp3' },
-  { name: 'Last Christmas', file: 'Last Christmas.mp3' },
-  { name: 'Let It Snow', file: 'Let It Snow.mp3' },
-  { name: 'Feliz Navidad', file: 'Feliz Navidad.mp3' },
-  { name: 'Its Beginning to Look a Lot Like Christmas', file: 'Its Beginning to Look a Lot Like Christmas.mp3' },
-  { name: 'Rockin Around The Christmas Tree', file: 'Rockin Around The Christmas Tree.mp3' },
+  { name: 'Jingle Bells (Piano)', file: 'jingle_bells_piano.mp3' },
+  { name: 'Jingle Bell Rock', file: 'jingle_bell_rock.mp3' },
+  { name: 'Last Christmas', file: 'last_christmas.mp3' },
+  { name: 'Let It Snow', file: 'let_it_snow.mp3' },
+  { name: 'Feliz Navidad', file: 'feliz_navidad.mp3' },
+  { name: 'Its Beginning to Look a Lot Like Christmas', file: 'its_beginning_to_look_a_lot_like_christmas.mp3' },
+  { name: 'Rockin Around The Christmas Tree', file: 'rockin_around_the_christmas_tree.mp3' },
 ];
 
 const ChristmasCard: React.FC = () => {
@@ -23,7 +23,8 @@ const ChristmasCard: React.FC = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.src = `${process.env.PUBLIC_URL}/playlist/${playlist[index].file}`;
+    // audio.src = `${process.env.PUBLIC_URL}/playlist/${playlist[index].file}`;
+    audio.src = `/playlist/${playlist[index].file}`;
     audio.load();
     audio.play().catch(err => console.log('Audio play error:', err));
     setIsPlaying(true);
