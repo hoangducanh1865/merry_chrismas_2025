@@ -38,7 +38,7 @@ const ChristmasCard: React.FC = () => {
   return (
     <div className={styles.christmasCard}>
       <audio ref={audioRef} loop preload="auto" playsInline>
-        <source src="/jingle-bells.mp3" type="audio/mpeg" />
+        <source src={`${process.env.PUBLIC_URL}/jingle-bells.mp3`} type="audio/mpeg" />
       </audio>
       <input id="open" type="checkbox" checked={isOpen} onChange={handleCheckboxChange} />
       <label className={styles.open} htmlFor="open" onClick={handleToggleOpen}></label>
@@ -51,7 +51,7 @@ const ChristmasCard: React.FC = () => {
       </div>
 
       <div className={styles.cardInside}>
-        <img src="/santa_hmai.jpg" alt="Santa" className={styles.santaImage} />
+        <img src={`${process.env.PUBLIC_URL}/santa_hmai.jpg`} alt="Santa" className={styles.santaImage} />
         <div className={styles.title}>Merry<br />Christmas!</div>
         <div className={styles.wishes}>I hope the magic of Christmas fills every corner of your heart with joy, now and always.</div>
         <div className={styles.gift}>
