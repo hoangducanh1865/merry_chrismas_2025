@@ -11,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .santaImage {
@@ -33,4 +35,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Responsive styles for App container */
+@media screen and (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  .santaImage {
+    display: none;
+  }
 }
